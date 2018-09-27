@@ -48,5 +48,5 @@ podTemplate(label: 'mypod', containers: [
         sh "kubectl apply -f kubeconfig.yml"
       }
     }
-
+  }
 }
