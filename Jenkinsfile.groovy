@@ -17,6 +17,7 @@ podTemplate(label: 'mypod', containers: [
       container('npm-jdk') {
         sh """
               npm install -g @angular/cli@1.7.4
+              npm install
               ng build
              """
       }
