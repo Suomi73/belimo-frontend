@@ -48,6 +48,17 @@ podTemplate(label: 'mypod', containers: [
       container('kubectl') {
         sh "kubectl apply -f kubeconfig.yml"
       }
+      waitUntilReady('app=belimo-frontend', 'belimo-frontend')
+    }
+
+    stage('UI Tests') {
+      container('npm-jdk') {
+        sh '''
+                   npm install nightwatch -g
+                   nightwatch UIT --env integration
+           '''
+      }
+      junit allowEmptyResults: true, testResults: '**/reports/*.xml'
     }
   }
 }
