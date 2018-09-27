@@ -16,7 +16,7 @@ podTemplate(label: 'mypod', containers: [
       git url: 'https://github.com/adessoSchweiz/belimo-frontend'
       container('npm-jdk') {
         sh """
-              npm install -g @angular/cli
+              npm install
               ng build
              """
       }
