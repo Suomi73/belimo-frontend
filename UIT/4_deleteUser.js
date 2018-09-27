@@ -12,6 +12,7 @@ module.exports = {
       .click('#usersListLink')
       .waitForElementVisible('button', 2000)
       .click('button')
+      .pause(250)
 
       .end();
   },
