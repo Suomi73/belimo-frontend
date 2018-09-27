@@ -7,12 +7,12 @@ module.exports = {
 
       .waitForElementVisible('div[class=col-md-offset-1] h1', 2000)
       .assert.containsText('div[class=col-md-offset-1] h1', 'Welcome to User App!')
+      .assert.visible("#usersListLink")
+      .assert.visible('#addUserLink')
 
       .waitForElementVisible('#usersListLink', 2000)
       .click('#usersListLink')
-      .assert.visible(".table")
-      .assert.visible("#usersListLink")
-      .assert.visible('#addUserLink')
+      .waitForElementVisible('.table', 2000)
 
       .end();
   },

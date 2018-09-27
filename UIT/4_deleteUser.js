@@ -10,8 +10,7 @@ module.exports = {
 
       .waitForElementVisible('#usersListLink', 2000)
       .click('#usersListLink')
-      .assert.visible('button')
-
+      .waitForElementVisible('button', 2000)
       .click('button')
 
       .end();

@@ -9,7 +9,7 @@ module.exports = {
 
       .waitForElementVisible('#usersListLink', 2000)
       .click('#usersListLink')
-      .assert.visible('table tbody tr:nth-of-type(1) td:nth-of-type(2)')
+      .waitForElementVisible('table tbody tr:nth-of-type(1) td:nth-of-type(2)', 2000)
       .assert.containsText('table tbody tr:nth-of-type(1) td:nth-of-type(2)', 'F123456789')
 
       .end();
