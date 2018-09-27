@@ -13,7 +13,7 @@ export class UserService {
 
   constructor(private http:HttpClient) {}
 
-  private userUrl = 'http://localhost:8080/user-portal/users';
+  private userUrl = 'http://35.180.136.18:31081/user-portal/users';
   //private userUrl = '/api';
 
   public getUsers() {
