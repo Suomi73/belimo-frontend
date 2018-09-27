@@ -44,7 +44,7 @@ podTemplate(label: 'mypod', containers: [
     }
 
     stage('deploy') {
-      sh "sed -i -e 's~image: robertbrem/belimo-frontend:todo~image: robertbrem/belimo-frontend:${env.VERSION}/' kubeconfig.yml"
+      sh "sed -i -e 's~image: robertbrem/belimo-frontend:todo~image: robertbrem/belimo-frontend:${env.VERSION}~' kubeconfig.yml"
       container('kubectl') {
         sh "kubectl apply -f kubeconfig.yml"
       }
