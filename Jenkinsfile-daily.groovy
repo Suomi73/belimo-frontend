@@ -21,6 +21,17 @@ podTemplate(label: 'mypod', containers: [
       pipelineTriggers([cron('0 12 * * *')])
     ])
 
+    stage('checkout & npm build') {
+      git url: 'https://github.com/adessoSchweiz/belimo-frontend'
+      container('npm-jdk') {
+        sh """
+              npm install -g @angular/cli@1.7.4
+              npm install
+              ng build
+             """
+      }
+    }
+
     stage('UI Tests') {
       ansiColor('xterm') {
         container('npm-jdk') {
