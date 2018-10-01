@@ -51,13 +51,15 @@ podTemplate(label: 'mypod', containers: [
     }
 
     stage('UI Tests') {
-      container('npm-jdk') {
-        sh '''
+      ansiColor('xterm') {
+        container('npm-jdk') {
+          sh '''
                    npm install nightwatch -g
                    nightwatch UIT --env integration
            '''
+        }
+        junit allowEmptyResults: true, testResults: '**/reports/*.xml'
       }
-      junit allowEmptyResults: true, testResults: '**/reports/*.xml'
     }
   }
 }
