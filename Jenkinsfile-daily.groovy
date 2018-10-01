@@ -1,8 +1,6 @@
 @Library('semantic_releasing') _
 
 podTemplate(label: 'mypod', containers: [
-  containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true, command: 'cat'),
-  containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.11.2', command: 'cat', ttyEnabled: true),
   containerTemplate(name: 'npm-jdk', image: 'khinkali/npm-java:0.0.4', ttyEnabled: true, command: 'cat'),
 ],
   volumes: [
